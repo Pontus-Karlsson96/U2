@@ -1,0 +1,60 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "sebbe",
+            "password": "arya"
+        },
+        {
+            "id": 2,
+            "name": "erik",
+            "password": "kombucha"
+        }
+    ],
+    "games": [
+        {
+            "id": 1,
+            "user_id": 2,
+            "name": "Chess",
+            "favorite": true,
+            "rating": 5
+        },
+        {
+            "id": 2,
+            "user_id": 1,
+            "name": "Dungeon and Dragons",
+            "favorite": true,
+            "rating": 5
+        },
+        {
+            "id": 3,
+            "user_id": 2,
+            "name": "Backgammon",
+            "favorite": true,
+            "rating": 5
+        }
+    ],
+    "characters": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "name": "Arya Stark (Game of Thrones)",
+            "favorite": true,
+            "rating": 5
+        },
+        {
+            "id": 1,
+            "user_id": 2,
+            "name": "Spiderman",
+            "favorite": false,
+            "rating": 5
+        },
+        {
+            "id": 1,
+            "user_id": 1,
+            "name": "Batman",
+            "favorite": false,
+            "rating": 5
+        }
+    ]
+}

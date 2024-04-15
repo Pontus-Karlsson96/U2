@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    width: 100vw;
+    height: 100svh;
+}
+
+
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #A9DEF9;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
+#wrapper>div {
+    width: 30%;
+
+    height: 80%;
+    background-color: #D3F8E2;
+    border: 1px solid black;
+    padding: 0.8rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form {
+    height: 100%;
+    background-color: #EDE7B1;
+    padding: 1rem;
+
+}
+
+#gamesButton,
+#charactersButton {
+    height: 2.3rem;
+    width: 5rem;
+}
+
+#counter {
+
+    height: 30%;
+    background-color: #E4C1F9;
+    padding: 0.8rem;
+
+}
+
+#counter>label {
+    font-size: 1.3rem;
+}
+
+#counter>li {
+    list-style: none;
+}
+
+h1 {
+    background-color: #F694C1;
+}
+
+#gamesList {
+
+    height: 100%;
+    background-color: #EDE7B1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+}
+
+
+#charactersList {
+
+    height: 100%;
+    background-color: #EDE7B1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: left;
+
+}
+
+.listItem {
+
+    height: 2rem;
+    background-color: #E4C1F9;
+    text-align: left;
+    padding: 0.5rem;
+}
