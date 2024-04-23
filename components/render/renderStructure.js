@@ -6,11 +6,13 @@ function renderStructure() {
 
     div.id = "wrapper";
 
+
     body.appendChild(div);
 
-    renderFormContainer(div.id);
-    renderGamesContainer(div.id);
-    renderCharacterContainer(div.id);
+
+    renderFormContainer("wrapper");
+    renderGamesContainer("wrapper");
+    renderCharacterContainer("wrapper");
 
 };
 

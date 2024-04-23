@@ -52,10 +52,13 @@ body {
     height: 30%;
     background-color: #E4C1F9;
     padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
-#counter>label {
+#counter>li {
     font-size: 1.3rem;
 }
 
@@ -89,10 +92,28 @@ h1 {
 
 }
 
+.list {
+    height: 100%;
+    width: 100%;
+    background-color: #EDE7B1;
+
+}
+
+
 .listItem {
 
     height: 2rem;
     background-color: #E4C1F9;
     text-align: left;
     padding: 0.5rem;
+    list-style: none;
+
+}
+
+button {
+    height: 1.5rem;
+    width: 3.5rem;
+
+
+
 }
