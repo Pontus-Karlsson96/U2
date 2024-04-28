@@ -9,15 +9,12 @@ function renderDeleteButton(parent) {
 
         //Find ID of object to be deleted 
         const typeOfObjectToBeDeleted = event.target.parentElement.parentElement.id;
-
+        console.log(typeOfObjectToBeDeleted);
         const objectToBeDeleted = event.target.parentElement.id;
-
+        console.log(objectToBeDeleted);
         const databaseID = objectToBeDeleted.slice(typeOfObjectToBeDeleted.length);
 
-
-
         //prepare fetch
-
         const body = {
             id: databaseID,
             token: token
@@ -31,24 +28,36 @@ function renderDeleteButton(parent) {
             body: JSON.stringify(body)
 
         };
-        console.log(options);
+
 
 
         let resource;
 
         if (typeOfObjectToBeDeleted == "gamesList") {
-            let resource = await fetchFunction("../../API/games.php)", options);
-            console.log("test");
+            let resource = await fetchFunction("../../API/games.php", options);
+            const entity = state_handler.delete("games", resource);
+
+            updateList("gamesList", entity);
+            updateCounterContainer();
+
+
 
         }
 
-        else {
+        else if (typeOfObjectToBeDeleted == "charactersList") {
             let resource = await fetchFunction("../../API/characters.php", options);
-            console.log("hej");
+            const entity = state_handler.delete("characters", resource);
+
+
+
+            updateList("charactersList", entity);
+            updateCounterContainer();
+
+
         };
 
 
     })
 };
 
-//DELETE request funkar ej
+

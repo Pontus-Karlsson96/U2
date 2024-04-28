@@ -13,8 +13,8 @@ function renderList(parent) {
 
 
 
-        games.forEach((item, index) => {
-            renderListItem(ul.id, item, index);
+        games.forEach((item) => {
+            renderListItem(ul.id, item);
 
         })
 
@@ -29,9 +29,9 @@ function renderList(parent) {
 
 
 
-        characters.forEach((item, index) => {
+        characters.forEach((item) => {
 
-            renderListItem(ul.id, item, index);
+            renderListItem(ul.id, item);
         })
 
 
@@ -41,28 +41,23 @@ function renderList(parent) {
 
 };
 
-function updateList(pickedList) {
-    const list = document.getElementById(pickedList);
-    console.log(pickedList);
-    list.textContent = "";
+function updateList(parent, entity) {
 
-    if (list === "gamesList") {
-        const games = state_handler.get(_state.games);
-
-        games.forEach((item, index) => {
-            renderListItem(list, item, index);
-        })
+    const container = document.getElementById(parent);
 
 
-    }
+    container.innerHTML = "";
 
-    else {
-        const characters = state_handler.get(_state.characters);
 
-        characters.forEach((item, index) => {
-            renderListItem(list, item, index);
-        })
-    }
+    entity.forEach(item => {
+
+        renderListItem(parent, item);
+
+    });
+
+
+
+
 
 
 }

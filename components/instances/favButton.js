@@ -10,23 +10,44 @@ function renderFavButton(parent) {
         //find ID of the object to be pached
         const typeOfObjectToBePatched = event.target.parentElement.parentElement.id;
 
+
         const objectToBePatchedId = event.target.parentElement.id;
+
         const databaseID = objectToBePatchedId.slice(typeOfObjectToBePatched.length);
 
 
-
-
         //find status of fav
+        const correctEntity = findEntity(typeOfObjectToBePatched);
+
+        //find entity function
+        function findEntity(item) {
+            const data = state_handler.get(_state);
+
+            if (item === "gamesList") {
+                return data.games
+            }
+
+            else {
+                return data.characters
+            }
+        }
+
+        //find the object
+
+        let correctRow;
+
+        correctEntity.forEach((entity) => {
+
+            if (entity.id == databaseID) {
+                correctRow = entity;
 
 
-        const rightEntity = findEntity(typeOfObjectToBePatched);
+            }
+        });
 
 
-        const rightRow = state_handler.get(rightEntity[databaseID]);
 
-
-        let fav = !rightRow.favorite;
-
+        let fav = !correctRow.favorite;
 
         //prepare fetch
         const body = {
@@ -35,8 +56,6 @@ function renderFavButton(parent) {
             id: databaseID,
             favorite: fav
         };
-
-
 
         const options = {
             method: "PATCH",
@@ -48,19 +67,24 @@ function renderFavButton(parent) {
         let resource;
 
         if (typeOfObjectToBePatched == "gamesList") {
-            console.log(typeOfObjectToBePatched);
+
             let resource = await fetchFunction("../../API/games.php", options);
-            console.log(resource);
+
+            const entity = state_handler.patch("games", resource);
+            console.log(entity);
+
+
+            updateListItem(entity, objectToBePatchedId, correctRow);
+            updateCounterContainer();
         }
 
         else {
             let resource = await fetchFunction("../../API/characters.php", options);
-            console.log("hej");
+            const entity = state_handler.patch("characters", resource);
+
+            updateListItem(entity, objectToBePatchedId, correctRow);
+            updateCounterContainer();
         }
-
-        //fetch request does not work
-
-
 
     })
 

@@ -1,4 +1,5 @@
-async function updateFavCounter() {
+/*async function updateFavCounter() {
+    await state_handler.updateState();
     const games = await state_handler.get(_state.games);
     const characters = await state_handler.get(_state.characters);
 
@@ -18,16 +19,5 @@ async function updateFavCounter() {
 
     return fav;
 }
-
-function findEntity(item) {
-    const data = state_handler.get(_state);
-
-    if (item === "gamesList") {
-        return data.games
-    }
-
-    else {
-        return data.characters
-    }
-}
+*/
 

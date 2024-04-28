@@ -1,3 +1,5 @@
+
+// sparar state här vid runApp och updateState
 const _state = {
 
 
@@ -23,7 +25,7 @@ const state_handler = {
 
     },
 
-    async updateState() {
+    async updateState(entity) {
         const resourceGames = await fetchFunction(`./API/games.php?token=${token}`);
         const resourceCharacters = await fetchFunction(`./API/characters.php?token=${token}`);
 
@@ -31,108 +33,86 @@ const state_handler = {
         _state.characters = resourceCharacters;
 
 
+
+
     },
 
 
-    post: function (entity_name, row) {
+    post: function (entity, resource) {
 
-        switch (entity_name) {
 
-            case "games":
-                //FETCH
-                fetchFunction(token, entity_name, row)
-                updateLeftContainer();
-                renderFavCounter("formContainer");
-                break;
+        this.updateState();
 
-            case "characters":
-                //FETCH
-                updateRightContainer();
-                renderFavCounter("formContainer");
-                break;
+        const data = _state
 
-            default:
-                console.log("category not found");
+
+        if (entity == "games") {
+            _state.games.push(resource);
+            return data.games;
+        }
+
+        else if (entity == "characters") {
+            _state.characters.push(resource);
+            return data.characters;
+        }
+
+
+    },
+
+    patch: function (entity, resource) {
+
+        this.updateState();
+
+        const data = _state
+
+
+
+        if (entity == "games") {
+            _state.games.push(resource);
+            return data.games
+
+
+        }
+
+        else if (entity == "characters") {
+            _state.characters.push(resource);
+            return data.characters
 
 
         }
     },
 
-    patch: function (entity_name, id, fields, values) {
-        switch (entity_name) {
+    delete: function (entity, resource) {
 
-            case "games":
-                let findGameObject = _state[entity_name].find(item => item.id == id);
+        this.updateState();
 
+        const data = _state;
 
-                for (let i = 0; i < entity_name.length; i++) {
-                    findGameObject[fields[i]] = values[i];
-
-                }
-                updateLeftContainer();
-
-                renderFavCounter("formContainer");
-
-                break;
-
-            case "characters":
-                let findCharacterObject = _state[entity_name].find(item => item.id == id);
+        if (entity == "games") {
 
 
-                for (let i = 0; i < entity_name.length; i++) {
-                    findCharacterObject[fields[i]] = values[i];
-                }
-                updateRightContainer();
+            const resourceIndex = data.games.findIndex(game => game.id === resource.id);
+            data.games.splice(resourceIndex, 1);
 
-                renderFavCounter("formContainer");
+            return data.games
 
-                break;
 
-            default: console.log("Could not patch");
+        }
 
+        else if (entity == "characters") {
+
+
+
+            const resourceIndex = data.characters.findIndex(character => character.id === resource.id);
+            data.characters.splice(resourceIndex, 1);
+
+            return data.characters
 
         }
 
     },
 
-    delete: function (entity_name, id) {
 
-
-        switch (entity_name) {
-
-
-            case "games":
-
-                let gameIndex = _state[entity_name].findIndex(item => item.id == id);
-
-                _state[entity_name].splice(gameIndex, 1);
-
-                updateLeftContainer();
-
-                renderFavCounter("formContainer");
-
-                break;
-
-            case "characters":
-
-                let characterIndex = _state[entity_name].findIndex(item => item.id === id);
-
-                _state[entity_name].splice(characterIndex, 1);
-
-                updateRightContainer();
-
-                renderFavCounter("formContainer");
-
-                break;
-
-            default: console.log("Could not delete"); console.log(entity_name, id);
-
-        }
-
-
-
-
-    },
 
     get: function (data) {
         const copyEntity = JSON.parse(JSON.stringify(data));
@@ -141,16 +121,8 @@ const state_handler = {
     }
 
 
+};
 
-
-
-
-
-
-
-
-
-
-}
+//mitt inlog token
 
 let token = "41ffb1370381d19ed31018e233ff85d1a62824d8";
