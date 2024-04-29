@@ -22,7 +22,7 @@ body {
     justify-content: space-evenly;
 }
 
-#wrapper>div {
+/*#wrapper>div {
     width: 30%;
 
     height: 80%;
@@ -32,11 +32,11 @@ body {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-}
+}*/
 
 #form {
-    height: 100%;
-    background-color: #EDE7B1;
+    height: 40%;
+    background-color: #DFF2D8;
     padding: 1rem;
 
 }
@@ -50,11 +50,11 @@ body {
 #counter {
 
     height: 30%;
-    background-color: #E4C1F9;
+    background-color: #7EBDC3;
     padding: 0.8rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 2rem;
 
 }
 
@@ -67,46 +67,55 @@ body {
 }
 
 h1 {
-    background-color: #F694C1;
-}
-
-#gamesList {
-
-    height: 100%;
-    background-color: #EDE7B1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-
+    background-color: #CED097;
 }
 
 
-#charactersList {
+#formContainer {
+    width: 50%;
+}
 
-    height: 100%;
-    background-color: #EDE7B1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    text-align: left;
+#gamesListContainer,
+#charactersListContainer {
+    border: 1px solid black;
+    height: 90svh;
+    width: 100%;
+}
+
+#gamesListContainer>.list {
+
+    background-color: #C6DEA6;
+
+}
+
+
+#charactersListContainer>.list {
+
+
+    background-color: #7EBDC3;
+
 
 }
 
 .list {
-    height: 100%;
+    height: 95.5%;
     width: 100%;
     background-color: #EDE7B1;
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 0;
+
 
 }
 
 
 .listItem {
 
-    height: 2rem;
+    height: 2.5rem;
     background-color: #E4C1F9;
     text-align: left;
     padding: 0.5rem;
-    list-style: none;
+    border: 1px solid black;
 
 }
 
