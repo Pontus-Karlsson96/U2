@@ -11,14 +11,10 @@ function renderList(parent) {
 
         const games = state_handler.get(_state.games);
 
-
-
         games.forEach((item) => {
             renderListItem(ul.id, item);
 
         })
-
-
     }
 
     if (parent == "charactersListContainer") {
@@ -27,14 +23,10 @@ function renderList(parent) {
 
         const characters = state_handler.get(_state.characters);
 
-
-
         characters.forEach((item) => {
 
             renderListItem(ul.id, item);
         })
-
-
     };
 
     container.appendChild(ul);
@@ -44,15 +36,11 @@ function renderList(parent) {
 function updateList(parent, entity) {
 
     const container = document.getElementById(parent);
-
-
     container.innerHTML = "";
-
 
     entity.forEach(item => {
 
         renderListItem(parent, item);
-
     });
 
 

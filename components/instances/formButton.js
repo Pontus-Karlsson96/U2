@@ -36,7 +36,6 @@ function renderFormButtons(parent, number) {
 
         if (event.target.id.includes("games")) {
             let resource = await fetchFunction("../../API/games.php", options);
-
             const entity = state_handler.post("games", resource);
 
             updateList("gamesList", entity);

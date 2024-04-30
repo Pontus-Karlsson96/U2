@@ -1,8 +1,6 @@
 
 // sparar state här vid runApp och updateState
 const _state = {
-
-
 };
 
 
@@ -56,7 +54,6 @@ const state_handler = {
             return data.characters;
         }
 
-
     },
 
     patch: function (entity, resource) {
@@ -65,19 +62,15 @@ const state_handler = {
 
         const data = _state
 
-
-
         if (entity == "games") {
             _state.games.push(resource);
             return data.games
-
 
         }
 
         else if (entity == "characters") {
             _state.characters.push(resource);
             return data.characters
-
 
         }
     },
@@ -112,15 +105,11 @@ const state_handler = {
 
     },
 
-
-
     get: function (data) {
         const copyEntity = JSON.parse(JSON.stringify(data));
         return copyEntity;
 
     }
-
-
 };
 
 //mitt inlog token

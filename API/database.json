@@ -19,21 +19,21 @@
     "games": [
         {
             "name": "Call of Duty 4",
-            "rating": "1",
+            "rating": "8",
             "favorite": false,
             "user_id": 3,
             "id": 1
         },
         {
             "name": "God of War 3",
-            "rating": "8",
+            "rating": "10",
             "favorite": false,
             "user_id": 3,
             "id": 2
         },
         {
             "name": "Unchartered",
-            "rating": "10",
+            "rating": "7",
             "favorite": false,
             "user_id": 3,
             "id": 3
@@ -41,21 +41,21 @@
     ],
     "characters": [
         {
-            "name": "Kratos of Sparta",
-            "rating": "10",
-            "favorite": false,
+            "name": "Nathan Drake",
+            "rating": "8",
+            "favorite": true,
             "user_id": 3,
             "id": 1
         },
         {
-            "name": "Nathan Drake",
-            "rating": "10",
+            "name": "Captain Price",
+            "rating": "9",
             "favorite": false,
             "user_id": 3,
             "id": 2
         },
         {
-            "name": "Captain Price",
+            "name": "Kratos of Sparta",
             "rating": "10",
             "favorite": false,
             "user_id": 3,

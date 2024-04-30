@@ -40,8 +40,6 @@ function renderFavButton(parent) {
 
             if (entity.id == databaseID) {
                 correctRow = entity;
-
-
             }
         });
 
@@ -71,7 +69,7 @@ function renderFavButton(parent) {
             let resource = await fetchFunction("../../API/games.php", options);
 
             const entity = state_handler.patch("games", resource);
-            console.log(entity);
+
 
 
             updateListItem(entity, objectToBePatchedId, correctRow);

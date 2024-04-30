@@ -10,9 +10,6 @@ function renderFormContainer(parent) {
     const select = document.createElement('select');
 
 
-
-
-
     h1.id = "formHeader";
     h1.textContent = "Enter Games or Characters";
     div.appendChild(h1);
@@ -33,22 +30,6 @@ function renderFormContainer(parent) {
     renderFormButtons("form", 2);
 
     renderCounterContainer("formContainer");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 };

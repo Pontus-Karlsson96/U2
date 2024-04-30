@@ -9,9 +9,9 @@ function renderDeleteButton(parent) {
 
         //Find ID of object to be deleted 
         const typeOfObjectToBeDeleted = event.target.parentElement.parentElement.id;
-        console.log(typeOfObjectToBeDeleted);
+
         const objectToBeDeleted = event.target.parentElement.id;
-        console.log(objectToBeDeleted);
+
         const databaseID = objectToBeDeleted.slice(typeOfObjectToBeDeleted.length);
 
         //prepare fetch

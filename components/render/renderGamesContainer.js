@@ -11,9 +11,4 @@ function renderGamesContainer(parent) {
 
     renderList("gamesListContainer");
 
-
-
-
-
-
 };

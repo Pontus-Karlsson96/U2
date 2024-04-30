@@ -2,9 +2,6 @@ function renderListItem(parent, item) {
 
     const container = document.getElementById(parent);
 
-
-
-
     const li = document.createElement('li');
     li.classList.add("listItem");
 
@@ -16,8 +13,6 @@ function renderListItem(parent, item) {
 
     renderFavButton(li.id);
     renderDeleteButton(li.id);
-
-
 }
 
 function updateListItem(entity, objectId, row) {
@@ -40,7 +35,6 @@ function updateListItem(entity, objectId, row) {
     listItem.innerHTML = "";
 
     listItem.innerHTML = `${info.name} #${info.rating} Favourite: ${info.favorite} `
-
 
     renderFavButton(listItem.id);
     renderDeleteButton(listItem.id);
